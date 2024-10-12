@@ -1,0 +1,37 @@
+server:
+  error:
+    include-binding-errors: always
+    include-stacktrace: never
+    include-message: always
+  port: 8070
+  servlet:
+    context-path: /utdbank/api
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: 1453ekim
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/banka
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+backendapi:
+  app:
+    jwtSecret: bankSecretKey
+    jwtExpirationMs: 86400000
+
+
